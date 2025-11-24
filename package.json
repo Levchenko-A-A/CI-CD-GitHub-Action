@@ -27,8 +27,12 @@
     "dev": "webpack server --mode=development",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "lint": "prettier --check . && eslint .",
-    "lint:fix": "prettier --write . && eslint . --fix"
+    "lint:check": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,css,md,yml,html}": "prettier --write"
   },
   "repository": {
     "type": "git",
