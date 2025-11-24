@@ -31,4 +31,5 @@ export function runApp(el) {
         element.textContent = text;
         parent.appendChild(element);
     }
+    
 }
