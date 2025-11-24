@@ -1,8 +1,9 @@
-import { runApp } from './runApp';
+/* eslint-disable jest/no-commented-out-tests */
+import { runApp } from "./runApp";
 
 // describe('Проверка функции createAndAppendElement()', () => {
 //     let testElement;
-    
+
 //     beforeEach(() => {
 //         testElement = document.createElement('div');
 //     });
@@ -31,7 +32,7 @@ import { runApp } from './runApp';
 
 //     test('Создание элементов с разными тегами', () => {
 //         const tags = ['h1', 'span', 'div', 'button'];
-        
+
 //         tags.forEach(tag => {
 //             createAndAppendElement(tag, `Test ${tag}`, testElement);
 //         });
@@ -61,42 +62,42 @@ import { runApp } from './runApp';
 //     });
 // });
 
-describe('Проверка функции runApp()', () => {
-    let container;
+describe("Проверка функции runApp()", () => {
+  let container;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-    });
+  beforeEach(() => {
+    container = document.createElement("div");
+  });
 
-    test('Создает input элемент', () => {
-        runApp(container);
-        
-        const input = container.querySelector('input.text-field');
-        expect(input).not.toBeNull();
-        expect(input.type).toBe('text');
-        expect(input.placeholder).toBe('Введите текст');
-    });
+  test("Создает input элемент", () => {
+    runApp(container);
 
-    test('Создает button элемент', () => {
-        runApp(container);
-        
-        const button = container.querySelector('button.button');
-        expect(button).not.toBeNull();
-        expect(button.textContent).toBe('Нажми меня');
-    });
+    const input = container.querySelector("input.text-field");
+    expect(input).not.toBeNull();
+    expect(input.type).toBe("text");
+    expect(input.placeholder).toBe("Введите текст");
+  });
 
-    test('Создает три параграфа', () => {
-        runApp(container);
-        
-        const paragraphs = container.querySelectorAll('p');
-        expect(paragraphs.length).toBe(3);
-        expect(paragraphs[0].textContent).toBe('First Paragraph');
-        expect(paragraphs[1].textContent).toBe('Second Paragraph');
-        expect(paragraphs[2].textContent).toBe('Third Paragraph');
-    });
+  test("Создает button элемент", () => {
+    runApp(container);
 
-    test('Все элементы добавляются в контейнер', () => {
-        runApp(container);
-        expect(container.children.length).toBe(5);
-    });
+    const button = container.querySelector("button.button");
+    expect(button).not.toBeNull();
+    expect(button.textContent).toBe("Нажми меня");
+  });
+
+  test("Создает три параграфа", () => {
+    runApp(container);
+
+    const paragraphs = container.querySelectorAll("p");
+    expect(paragraphs.length).toBe(3);
+    expect(paragraphs[0].textContent).toBe("First Paragraph");
+    expect(paragraphs[1].textContent).toBe("Second Paragraph");
+    expect(paragraphs[2].textContent).toBe("Third Paragraph");
+  });
+
+  test("Все элементы добавляются в контейнер", () => {
+    runApp(container);
+    expect(container.children.length).toBe(5);
+  });
 });
