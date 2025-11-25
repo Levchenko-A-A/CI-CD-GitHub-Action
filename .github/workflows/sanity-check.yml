@@ -1,6 +1,6 @@
 name: Sanity Check
 
-on: 
+on:
   pull_request:
 
 jobs:
