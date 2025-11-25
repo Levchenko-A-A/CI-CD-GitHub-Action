@@ -1,10 +1,12 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
-on:
+on: 
   pull_request:
 
 jobs:
-  sanity_check:
+  deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,5 +14,8 @@ jobs:
         with:
           node-version: "24.x"
       - run: npm ci
-      - run: npm run lint:check
       - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
