@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/Levchenko-A-A/CI-CD-GitHub-Action/issues"
   },
-  "homepage": "https://github.com/Levchenko-A-A/CI-CD-GitHub-Action#readme"
+  "homepage": "https://github.com/Levchenko-A-A/CI-CD-GitHub-Action#readme",
+  "dependencies": {
+    "husky": "^9.1.7"
+  }
 }
