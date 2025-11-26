@@ -26,7 +26,7 @@ export function getInputText(inputElement) {
  * @param {HTMLButtonElement} buttonElement - Button element to disable
  */
 export function clearInput(inputElement, buttonElement) {
-  inputElement.value = '';
+  inputElement.value = "";
   buttonElement.disabled = true;
 }
 
@@ -37,12 +37,12 @@ export function clearInput(inputElement, buttonElement) {
  * @param {HTMLElement} parent - Parent element containing paragraphs
  */
 export function chekNumberParag(text, parent) {
-  const paragraph = parent.querySelectorAll('p');
+  const paragraph = parent.querySelectorAll("p");
   if (paragraph.length < 5) {
-    createAndAppendElement('p', text, parent);
+    createAndAppendElement("p", text, parent);
   } else {
-    parent.querySelector('p').remove();
-    createAndAppendElement('p', text, parent);
+    parent.querySelector("p").remove();
+    createAndAppendElement("p", text, parent);
   }
 }
 
@@ -68,6 +68,6 @@ export function getClickHandler(inputElement, buttonElement, parent) {
  */
 export function inputText(buttonElement) {
   return (event) => {
-    buttonElement.disabled = event.target.value.trim() === '';
+    buttonElement.disabled = event.target.value.trim() === "";
   };
 }
