@@ -1,4 +1,5 @@
 import "./runApp.css";
+import {createAndAppendElement, getClickHandler, inputText} from './function.js';
 
 export function runApp(el) {
   const input = document.createElement("input");
@@ -12,8 +13,9 @@ export function runApp(el) {
   Object.assign(button, {
     className: "button",
     textContent: "Нажми меня",
-    //disabled: true,
+    disabled: true,
   });
+  
 
   el.append(input);
   el.append(button);
@@ -21,14 +23,6 @@ export function runApp(el) {
   createAndAppendElement("p", "First Paragraph", el);
   createAndAppendElement("p", "Second Paragraph", el);
   createAndAppendElement("p", "Third Paragraph", el);
-
-  /**
-   * Creates HTML element, set its text content and appends it to
-   * the specified parent element
-   */
-  function createAndAppendElement(tag, text, parent) {
-    const element = document.createElement(tag);
-    element.textContent = text;
-    parent.appendChild(element);
-  }
+  button.addEventListener('click', getClickHandler(input, button, el));
+  input.addEventListener('input', inputText(button));
 }
